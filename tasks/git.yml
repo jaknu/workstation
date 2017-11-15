@@ -1,0 +1,7 @@
+---
+
+- name: Ensure that git is up to date
+  become: true
+  apt:
+    name: git
+    state: latest

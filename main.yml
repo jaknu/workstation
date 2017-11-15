@@ -1,0 +1,11 @@
+---
+
+- hosts:
+    - localhost
+  tasks:
+    - include: tasks/i3.yml
+    - include: tasks/chrome.yml
+    - include: tasks/git.yml
+    - include: tasks/vim.yml
+    - include: tasks/docker.yml
+    - include: tasks/golang.yml

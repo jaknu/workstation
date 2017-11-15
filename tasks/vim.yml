@@ -1,0 +1,18 @@
+---
+
+- name: Ensure that vim is up to date
+  become: true
+  apt:
+    name: vim
+    state: latest
+    update_cache: yes
+
+- name: Ensure that vimrc is up to date
+  template:
+    src: vimrc.j2
+    dest: ~/.vimrc
+
+- name: Ensure that the ctrl-p vim plugin is up to date
+  git:
+    repo: https://github.com/ctrlpvim/ctrlp.vim.git
+    dest: ~/.vim/bundle/ctrlp.vim

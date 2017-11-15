@@ -1,0 +1,14 @@
+---
+
+- name: Ensure that golang is installed
+  become: true
+  unarchive:
+    src: https://redirector.gvt1.com/edgedl/go/go1.9.2.linux-386.tar.gz
+    dest: /usr/local/
+    remote_src: yes
+
+- name: Ensure that golang is added to PATH
+  become: true
+  copy:
+    dest: /etc/profile.d/go-bin-path.sh
+    content: PATH=$PATH:/usr/local/go/bin
