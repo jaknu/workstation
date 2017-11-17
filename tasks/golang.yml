@@ -12,3 +12,9 @@
   copy:
     dest: /etc/profile.d/go-bin-path.sh
     content: PATH=$PATH:/usr/local/go/bin
+
+- name: Ensure that GOPATH is exported from .bashrc
+  lineinfile:
+    path: ~/.bashrc
+    regexp: ^export GOPATH=
+    line: export GOPATH=~
